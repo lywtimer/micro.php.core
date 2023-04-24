@@ -6,6 +6,10 @@ use mszlu\memory\traits\MultitonTrait;
 
 class Engine
 {
+
+    private array $middlewares = [];
+    protected $context;
+
     use MultitonTrait;
 
     public function run()
