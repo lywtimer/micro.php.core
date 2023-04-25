@@ -1,5 +1,5 @@
 {
-    "name": "mszlu/memory",
+    "name": "mszlu/core",
     "type": "project",
     "require": {
         "php": "^8.1"

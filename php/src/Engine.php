@@ -1,19 +1,29 @@
 <?php
 
-namespace mszlu\memory;
+namespace mszlu\core;
 
-use mszlu\memory\traits\MultitonTrait;
+use mszlu\core\middleware\MiddlewareInterface;
+use mszlu\core\middleware\MiddlewareStack;
+use mszlu\core\traits\MultitonTrait;
+
 
 class Engine
 {
-
-    private array $middlewares = [];
-    protected $context;
+    protected ?MiddlewareStack $middlewareStack = null;
+    protected array $middlewares = [];
 
     use MultitonTrait;
 
-    public function run()
+    public function addMiddleware(MiddlewareInterface ...$middleware): static
     {
-        echo "I'm coming";
+        foreach ($middleware as $m) {
+            $this->middlewares[] = $m;
+        }
+        return $this;
+    }
+
+    public function run(): void
+    {
+        (new MiddlewareStack($this->middlewares))->next([]);
     }
 }
