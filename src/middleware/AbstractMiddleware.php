@@ -6,6 +6,11 @@ abstract class AbstractMiddleware implements MiddlewareInterface
 {
     public function onException($e)
     {
-        fwrite(STDOUT, $e->getMessage() . PHP_EOL);
+        if (PHP_SAPI == "cli") {
+            $stdout = STDOUT;
+        } else {
+            $stdout = fopen('php://stdout', 'w');
+        }
+        fwrite($stdout, $e->getMessage() . PHP_EOL);
     }
 }
