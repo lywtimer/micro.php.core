@@ -1,6 +1,6 @@
 <?php
 
-namespace mszlu\core\middleware;
+namespace mszl\core\middleware;
 
 interface MiddlewareInterface
 {

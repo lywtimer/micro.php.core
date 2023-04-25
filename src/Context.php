@@ -1,6 +1,6 @@
 <?php
 
-namespace mszlu\core;
+namespace mszl\core;
 
 abstract class Context
 {

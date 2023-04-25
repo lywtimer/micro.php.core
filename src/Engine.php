@@ -1,10 +1,10 @@
 <?php
 
-namespace mszlu\core;
+namespace mszl\core;
 
-use mszlu\core\middleware\MiddlewareInterface;
-use mszlu\core\middleware\MiddlewareStack;
-use mszlu\core\traits\MultitonTrait;
+use mszl\core\middleware\MiddlewareInterface;
+use mszl\core\middleware\MiddlewareStack;
+use mszl\core\traits\MultitonTrait;
 
 
 class Engine

@@ -1,6 +1,6 @@
 <?php
 
-namespace mszlu\core\traits;
+namespace mszl\core\traits;
 
 trait MultitonTrait
 {
