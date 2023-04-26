@@ -3,24 +3,24 @@
 namespace mszl\core\context;
 
 use mszl\core\traits\SingletonTrait;
-use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class SymfonyHttpContext implements Context
 {
     use SingletonTrait;
-    private Request $r;
+
+    private SymfonyHttpContextRequest $r;
     private Response $w;
 
     public function __construct()
     {
         $this->w = new Response();
-        $this->r = Request::createFromGlobals();
+        $this->r = SymfonyHttpContextRequest::getInstance();
     }
 
-    function getRequest(): Request
+    function getRequest(): SymfonyHttpContextRequest
     {
-        return Request::createFromGlobals();
+        return $this->r;
     }
 
     function setHeader(string $key, string|array|null $values, bool $replace = true): Context

@@ -85,17 +85,17 @@ class Engine
     }
 
     /**
-     * @return null
+     * @return Context|null
      */
-    public function getContext()
+    public function getContext(): ?Context
     {
         return $this->context;
     }
 
     /**
-     * @param null $context
+     * @param Context $context
      */
-    public function setContext($context): void
+    public function setContext(Context $context): void
     {
         $this->context = $context;
     }

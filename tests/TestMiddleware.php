@@ -2,19 +2,15 @@
 
 namespace mszl\core;
 
-use Exception;
-use mszl\core\context\Context;
-use mszl\core\middleware\AbstractMiddleware;
-use mszl\core\middleware\MiddlewareStack;
-use mszl\core\middleware\TimeMiddleware;
 use mszl\core\middleware\ErrorHandlerMiddleware;
+use mszl\core\middleware\TimeMiddleware;
 use PHPUnit\Framework\TestCase;
 
 class TestMiddleware extends TestCase
 {
     public function testEngineCreate()
     {
-        $engines = Engine::getInstance('a','b','c');
+        $engines = Engine::getInstance('a', 'b', 'c');
         $this->assertIsArray($engines);
         $engine = Engine::getInstance();
         $this->assertInstanceOf(Engine::class, $engine, 'what?');
@@ -47,16 +43,7 @@ class TestMiddleware extends TestCase
     }
 }
 
-Class Demo extends AbstractMiddleware
-{
 
-    public function handle(Context $context, MiddlewareStack $stack): string
-    {
-        $request = $context->getRequest();
-        console("demo exec" . json_encode($request));
-        return "hello";
-    }
-}
 
 
 
