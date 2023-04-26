@@ -1,6 +1,8 @@
 # memory
 
-
+- 设计思想
+  - 依赖倒置原则
+- 探索 web 框架
 
 type Context struct {
 W                     http.ResponseWriter
@@ -20,10 +22,3 @@ sameSite              http.SameSite
 }
 
 
-type Engine struct {
-router
-Logger       *mslog.Logger
-middlewares  []MiddlewareFunc
-errorHandler ErrorHandler
-register     register.MsRegister
-}

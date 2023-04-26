@@ -4,15 +4,20 @@ namespace mszl\core\traits;
 
 trait MultitonTrait
 {
-    private static $instances = [];
+    private static array $instances = [];
 
-    public static function getInstance($alias)
+    public static function getInstance(string ...$alias)
     {
-        if (!isset(self::$instances[$alias])) {
-            self::$instances[$alias] = new self();
+        $num = func_num_args();
+        if ($num === 0) {
+            $alias = [''];
         }
-
-        return self::$instances[$alias];
+        foreach ($alias as $v) {
+            if (!isset(self::$instances[$v])) {
+                self::$instances[$v] = new self();
+            }
+        }
+        return $num > 1 ? self::$instances : self::$instances[$alias[0]];
     }
 
     private function __construct() {}

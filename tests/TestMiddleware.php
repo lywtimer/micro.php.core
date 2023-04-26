@@ -3,53 +3,60 @@
 namespace mszl\core;
 
 use Exception;
+use mszl\core\context\Context;
 use mszl\core\middleware\AbstractMiddleware;
 use mszl\core\middleware\MiddlewareStack;
+use mszl\core\middleware\TimeMiddleware;
+use mszl\core\middleware\ErrorHandlerMiddleware;
 use PHPUnit\Framework\TestCase;
 
 class TestMiddleware extends TestCase
 {
-    public function testEngine()
+    public function testEngineCreate()
+    {
+        $engines = Engine::getInstance('a','b','c');
+        $this->assertIsArray($engines);
+        $engine = Engine::getInstance();
+        $this->assertInstanceOf(Engine::class, $engine, 'what?');
+        $engine = Engine::getInstance();
+        $this->assertInstanceOf(Engine::class, $engine, 'what?');
+        $engine = Engine::getInstance('a');
+        $this->assertInstanceOf(Engine::class, $engine, 'what?');
+    }
+
+    public function testMiddleware()
     {
         $middlewares = [
             new TimeMiddleware(),
             new ErrorHandlerMiddleware()
         ];
-        var_dump(111111);
-        Engine::getInstance("")->addMiddleware(...$middlewares)->run();
-        $this->assertTrue(true);
+        $engine = Engine::getInstance()->addMiddleware(...$middlewares);
+        $this->assertInstanceOf(Engine::class, $engine, 'what?');
     }
-}
 
-class TimeMiddleware extends AbstractMiddleware
-{
-    public function handle($request, MiddlewareStack $stack)
+    public function testContext()
     {
-        $start = microtime(true);
+        $middlewares = [
+            new TimeMiddleware(),
+            new Demo()
+        ];
+        $result = Engine::getInstance()->addMiddleware(...$middlewares)->run();
+        console($result);
 
-        $response = $stack->next($request);
-
-        $end = microtime(true);
-        $time = $end - $start;
-
-        echo sprintf('Request time: %s sec' . PHP_EOL, $time);
-
-        return $response;
+        $this->assertIsBool(true);
     }
-
 }
 
-class ErrorHandlerMiddleware extends AbstractMiddleware
+Class Demo extends AbstractMiddleware
 {
-    /**
-     * @throws Exception
-     */
-    public function handle($request, MiddlewareStack $stack)
+
+    public function handle(Context $context, MiddlewareStack $stack): string
     {
-        echo "我处理了业务程序", PHP_EOL;
-        usleep(100 * 215);
-        if (rand(0, 1)) throw new Exception("我执行超时了");
-        return $stack->next($request);
+        $request = $context->getRequest();
+        console("demo exec" . json_encode($request));
+        return "hello";
     }
 }
+
+
 
