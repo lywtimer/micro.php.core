@@ -9,14 +9,16 @@ use Symfony\Component\HttpFoundation\Response;
 class SymfonyHttpContext implements Context
 {
     use SingletonTrait;
+    private Request $r;
     private Response $w;
 
     public function __construct()
     {
         $this->w = new Response();
+        $this->r = Request::createFromGlobals();
     }
 
-    function getRequest()
+    function getRequest(): Request
     {
         return Request::createFromGlobals();
     }
@@ -26,7 +28,6 @@ class SymfonyHttpContext implements Context
         $this->w->headers->set($key, $values, $replace);
         return $this;
     }
-
 
     function write($data)
     {
