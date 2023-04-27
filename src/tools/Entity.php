@@ -1,27 +1,28 @@
 <?php
 
-namespace Mszlu\Tools;
+    namespace mszl\core\tools;
 
-use Exception;
+    use Exception;
+    use mszl\core\traits\ArrayAccessTrait;
 
-class Entity implements \ArrayAccess
-{
-    use ArrayAccessTrait;
-
-    public function encode()
+    class Entity implements \ArrayAccess
     {
-        return json_encode($this, JSON_UNESCAPED_UNICODE);
-    }
+        use ArrayAccessTrait;
 
-    /**
-     * @throws Exception
-     */
-    public static function decode($jsonData)
-    {
-        $decodeData = json_decode($jsonData, true);
-        if (json_last_error()) {
-            throw new Exception("decode error : " . json_last_error_msg());
+        public function encode(): bool|string
+        {
+            return json_encode($this, JSON_UNESCAPED_UNICODE);
         }
-        return new self($decodeData);
+
+        /**
+         * @throws Exception
+         */
+        public static function decode($jsonData): Entity
+        {
+            $decodeData = json_decode($jsonData, true);
+            if (json_last_error()) {
+                throw new Exception("decode error : " . json_last_error_msg());
+            }
+            return new self($decodeData);
+        }
     }
-}

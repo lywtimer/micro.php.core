@@ -1,15 +1,15 @@
 <?php
 
-namespace mszl\core\context;
+    namespace mszl\core\context;
 
-interface ContextRequest
-{
-    function getQuery($name = null, $default = null);
+    interface ContextRequest
+    {
+        public function getQuery($name = null, $default = null);
 
-    function getPost($name = null, $default = null);
+        public function getPost($name = null, $default = null);
 
-    function getCookie($name = null, $default = null);
+        public function getCookie($name = null, $default = null);
 
-    function getFiles($name = null, $default = null);
+        public function getFiles($name = null, $default = null);
 
-}
+    }

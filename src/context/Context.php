@@ -1,14 +1,14 @@
 <?php
 
-namespace mszl\core\context;
+    namespace mszl\core\context;
 
-interface Context
-{
-    function getRequest(): ContextRequest;
+    interface Context
+    {
+        public function getRequest(): ContextRequest;
 
-    function setHeader(string $key, string|array|null $values, bool $replace = true): Context;
+        public function setHeader(string $key, string|array|null $values, bool $replace = true): Context;
 
-    function setStatusCode(int $code);
+        public function setStatusCode(int $code);
 
-    function write(mixed $data);
-}
+        public function write(mixed $data);
+    }
