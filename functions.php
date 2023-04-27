@@ -25,7 +25,7 @@ if (!function_exists('console')) {
         if (!is_scalar($data)) {
             $data = serialize($data);
         }
-        if (PHP_SAPI == "cli") {
+        if (PHP_SAPI == 'cli') {
             $stdout = STDOUT;
         } else {
             $stdout = fopen('php://stdout', 'w');
@@ -60,13 +60,13 @@ if (!function_exists('readableBytes')) {
     {
         $time = microtime(true);
 
-        $arr = explode(".", $time);
+        $arr = explode('.', $time);
 
         $currentTime = $arr[0];
 
         $microStr = substr($arr[1], 0, 3);
 
-        return $micro ? date("Y-m-d H:i:s", $currentTime) . "." . $microStr : date("Y-m-d H:i:s", $currentTime);
+        return $micro ? date('Y-m-d H:i:s', $currentTime) . '.' . $microStr : date("Y-m-d H:i:s", $currentTime);
     }
 }
 
@@ -75,12 +75,12 @@ if (!function_exists('readableTime')) {
     {
         $unit = ['s', 'ms', 'μs', 'ns', 'ps', 'fs'];
         //指数
-        $i =  - (($size > 1 || $size == 0) ? 0 : floor(log($size,1000)));
+        $i = -(($size > 1 || $size == 0) ? 0 : floor(log($size, 1000)));
         $min = min(count($unit) - 1, $i);
         //基数
         $operand = pow(1000, $min);
 
-        return round($operand *  $size, $scale) . $unit[$min];
+        return round($operand * $size, $scale) . $unit[$min];
     }
 }
 
@@ -89,7 +89,7 @@ if (!function_exists('readableBytes')) {
     {
         $unit = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];
         //指数
-        $i = $size < 1024 ? 0 : floor(log($size,1024));
+        $i = $size < 1024 ? 0 : floor(log($size, 1024));
         //基数
         $operand = pow(1024, $i);
 
@@ -139,7 +139,7 @@ if (!function_exists('camelize')) {
      * step1.原字符串转小写,原字符串中的分隔符用空格替换,在字符串开头加上分隔符
      * step2.将字符串中每个单词的首字母转换为大写,再去空格,去字符串首部附加的分隔符.
      * @param string $uncamelize
-     * @param bool   $class
+     * @param bool $class
      * @param string $separator
      * @return string
      */

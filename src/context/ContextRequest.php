@@ -12,4 +12,8 @@
 
         public function getFiles($name = null, $default = null);
 
+        public function getPathInfo(): string;
+
+        public function getMethod(): string;
+
     }
