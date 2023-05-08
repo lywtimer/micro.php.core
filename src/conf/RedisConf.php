@@ -29,7 +29,7 @@ class RedisConf extends Entity
             $instance = $attribute->newInstance();
             if ($instance instanceof ConfReaderInterface) {
                 $conf = $instance->read();
-                $data = json_decode($conf, true);
+                if ($conf) $data = json_decode($conf, true);
             }
         }
         return new self($data);

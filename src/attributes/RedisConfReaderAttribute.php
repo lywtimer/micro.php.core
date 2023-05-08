@@ -30,7 +30,9 @@ class RedisConfReaderAttribute implements ConfReaderInterface
 
     private function readFromNacos()
     {
-        $host = 'http://192.168.12.180:8848/';
-        return Nacos::init($host, 'dev', 'com.conf', 'DEFAULT_GROUP', '')->runOnce();
+        $host = 'https://liyutong180220.top/'; // http://192.168.12.180:8848/
+        $dataId = 'com.lywtimer.conf.redis'; // com.conf
+        $group = 'CONFIG_GROUP'; //DEFAULT_GROUP
+        return Nacos::init($host, 'dev', $dataId, $group, '')->runOnce();
     }
 }
