@@ -2,6 +2,7 @@
 
 namespace mszl\core;
 
+use mszl\core\conf\RedisConf;
 use PHPUnit\Framework\TestCase;
 
 class TestRedis extends TestCase
@@ -10,10 +11,13 @@ class TestRedis extends TestCase
     {
         $connect = true;
         try {
+            console(RedisConf::get()->host);
+            return;
             $client = new \Predis\Client([
                 'scheme' => 'tcp',
-                'host' => '',
+                'host' => '127.0.0.1',
                 'port' => 6379,
+                'timeout' => 1,
             ]);
             $client->auth("");
             $rs = $client->ping();
