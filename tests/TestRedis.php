@@ -11,7 +11,7 @@ class TestRedis extends TestCase
     {
         $connect = true;
         try {
-            console(RedisConf::get()->host);
+            console(RedisConf::getInstance()->host);
             return;
             $client = new \Predis\Client([
                 'scheme' => 'tcp',

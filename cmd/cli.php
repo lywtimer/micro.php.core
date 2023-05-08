@@ -8,7 +8,9 @@ require_once APP_PATH . '/../vendor/autoload.php';
 
 
 $rs = RedisConf::getInstance();
-var_dump($rs->host);
-var_dump($rs->port);
+var_dump(\mszl\core\enum\ConfReaderTypeEnum::ini);
+var_dump(\mszl\core\enum\ConfReaderTypeEnum::ini->name);
+var_dump(\mszl\core\enum\ConfReaderTypeEnum::cases());
+
 exit;
 phpinfo();
