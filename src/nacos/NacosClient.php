@@ -2,8 +2,6 @@
 
 namespace mszl\core\nacos;
 
-use GuzzleHttp\Client;
-
 class NacosClient
 {
     private $server_addresses;
@@ -42,11 +40,10 @@ class NacosClient
 
     private function httpGet($url, $params)
     {
-        $url = $url . "?" . http_build_query($params);
+//        $url = $url . "?" . http_build_query($params);
         $options = [
             'ssl' => [
-                'verify_peer' => false,
-                'verify_peer_name' => false,
+//                'cafile' => CAFILE,
             ],
             'http' => [
                 'method' => 'Get',
@@ -57,10 +54,10 @@ class NacosClient
         $context = stream_context_create($options);
 
 
-        $client = new Client();
-        $response = $client->get($url, $options);
-//        $response = file_get_contents($url, false, $context);
-
+//        $client = new Client();
+//        $response = $client->get($url, $options);
+        $response = file_get_contents($url, false, $context);
+        return $response;
         return [
             'code' => $response->getStatusCode(),
             'data' => $response->getBody(),
@@ -69,13 +66,14 @@ class NacosClient
 
     public function login($username, $password)
     {
-        $url = $this->protocol . $this->server_addresses . "/nacos/v1/auth/login";
+        $url = $this->protocol . $this->server_addresses . '/nacos/v1/auth/login';
         $params = [
             'username' => $username,
             'password' => $password
         ];
         $response = $this->httpPost($url, $params);
         $this->accessToken = $response['accessToken'];
+        return $response;
     }
 
     private function httpPost($url, $params)
@@ -88,6 +86,6 @@ class NacosClient
             ]
         ];
         $context = stream_context_create($options);
-        $response = file_get_contents($url, false, $context);
+        return file_get_contents($url, false, $context);
     }
 }

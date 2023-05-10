@@ -1,0 +1,92 @@
+[10-May-2023 10:12:01 UTC] PHP Warning:  file_get_contents(https://music.liyutong180220.top/): Failed to open stream: HTTP request failed! HTTP/1.1 405 Not Allowed
+ in D:\memory\micro.php.core\cmd\cli.php on line 22
+[10-May-2023 10:12:01 UTC] PHP Stack trace:
+[10-May-2023 10:12:01 UTC] PHP   1. {main}() D:\memory\micro.php.core\cmd\cli.php:0
+[10-May-2023 10:12:01 UTC] PHP   2. file_get_contents($filename = 'https://music.liyutong180220.top/', $use_include_path = FALSE, $context = resource(20) of type (stream-context)) D:\memory\micro.php.core\cmd\cli.php:22
+[10-May-2023 10:17:05 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\RequestException: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://music.liyutong180220.top/ in D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php:211
+Stack trace:
+#0 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php(158): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php(110): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlHandler.php(47): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\Proxy.php(28): GuzzleHttp\Handler\CurlHandler->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#4 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\Proxy.php(48): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#5 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\PrepareBodyMiddleware.php(35): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Middleware.php(31): GuzzleHttp\PrepareBodyMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#7 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\RedirectMiddleware.php(71): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#8 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Middleware.php(63): GuzzleHttp\RedirectMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#9 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\HandlerStack.php(75): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#10 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Client.php(331): GuzzleHttp\HandlerStack->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#11 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Client.php(168): GuzzleHttp\Client->transfer(Object(GuzzleHttp\Psr7\Request), Array)
+#12 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Client.php(187): GuzzleHttp\Client->requestAsync('GET', Object(GuzzleHttp\Psr7\Uri), Array)
+#13 D:\memory\micro.php.core\cmd\cli.php(25): GuzzleHttp\Client->request('GET', 'https://music.l...')
+#14 {main}
+  thrown in D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php on line 211
+[10-May-2023 10:23:39 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\RequestException: cURL error 60: SSL certificate problem: unable to get local issuer certificate (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://music.liyutong180220.top/ in D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php:211
+Stack trace:
+#0 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php(158): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php(110): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlHandler.php(47): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\Proxy.php(28): GuzzleHttp\Handler\CurlHandler->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#4 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\Proxy.php(48): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#5 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\PrepareBodyMiddleware.php(35): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Middleware.php(31): GuzzleHttp\PrepareBodyMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#7 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\RedirectMiddleware.php(71): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#8 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Middleware.php(63): GuzzleHttp\RedirectMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#9 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\HandlerStack.php(75): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#10 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Client.php(331): GuzzleHttp\HandlerStack->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#11 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Client.php(168): GuzzleHttp\Client->transfer(Object(GuzzleHttp\Psr7\Request), Array)
+#12 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Client.php(187): GuzzleHttp\Client->requestAsync('GET', Object(GuzzleHttp\Psr7\Uri), Array)
+#13 D:\memory\micro.php.core\cmd\cli.php(33): GuzzleHttp\Client->request('GET', 'https://music.l...', Array)
+#14 {main}
+  thrown in D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php on line 211
+[10-May-2023 10:40:34 UTC] PHP Warning:  file_get_contents(): php_network_getaddresses: getaddrinfo for music.liyutong1802201.top failed: 不知道这样的主机。  in D:\memory\micro.php.core\cmd\cli.php on line 22
+[10-May-2023 10:40:34 UTC] PHP Stack trace:
+[10-May-2023 10:40:34 UTC] PHP   1. {main}() D:\memory\micro.php.core\cmd\cli.php:0
+[10-May-2023 10:40:34 UTC] PHP   2. file_get_contents($filename = 'https://music.liyutong1802201.top/', $use_include_path = FALSE, $context = resource(20) of type (stream-context)) D:\memory\micro.php.core\cmd\cli.php:22
+[10-May-2023 10:40:34 UTC] PHP Warning:  file_get_contents(https://music.liyutong1802201.top/): Failed to open stream: php_network_getaddresses: getaddrinfo for music.liyutong1802201.top failed: 不知道这样的主机。  in D:\memory\micro.php.core\cmd\cli.php on line 22
+[10-May-2023 10:40:34 UTC] PHP Stack trace:
+[10-May-2023 10:40:34 UTC] PHP   1. {main}() D:\memory\micro.php.core\cmd\cli.php:0
+[10-May-2023 10:40:34 UTC] PHP   2. file_get_contents($filename = 'https://music.liyutong1802201.top/', $use_include_path = FALSE, $context = resource(20) of type (stream-context)) D:\memory\micro.php.core\cmd\cli.php:22
+[10-May-2023 10:40:34 UTC] PHP Fatal error:  Uncaught GuzzleHttp\Exception\ConnectException: cURL error 6: Could not resolve host: music.liyutong1802201.top (see https://curl.haxx.se/libcurl/c/libcurl-errors.html) for https://music.liyutong1802201.top/ in D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php:210
+Stack trace:
+#0 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php(158): GuzzleHttp\Handler\CurlFactory::createRejection(Object(GuzzleHttp\Handler\EasyHandle), Array)
+#1 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php(110): GuzzleHttp\Handler\CurlFactory::finishError(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#2 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlHandler.php(47): GuzzleHttp\Handler\CurlFactory::finish(Object(GuzzleHttp\Handler\CurlHandler), Object(GuzzleHttp\Handler\EasyHandle), Object(GuzzleHttp\Handler\CurlFactory))
+#3 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\Proxy.php(28): GuzzleHttp\Handler\CurlHandler->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#4 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\Proxy.php(48): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#5 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\PrepareBodyMiddleware.php(35): GuzzleHttp\Handler\Proxy::GuzzleHttp\Handler\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#6 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Middleware.php(31): GuzzleHttp\PrepareBodyMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#7 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\RedirectMiddleware.php(71): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#8 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Middleware.php(63): GuzzleHttp\RedirectMiddleware->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#9 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\HandlerStack.php(75): GuzzleHttp\Middleware::GuzzleHttp\{closure}(Object(GuzzleHttp\Psr7\Request), Array)
+#10 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Client.php(331): GuzzleHttp\HandlerStack->__invoke(Object(GuzzleHttp\Psr7\Request), Array)
+#11 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Client.php(168): GuzzleHttp\Client->transfer(Object(GuzzleHttp\Psr7\Request), Array)
+#12 D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Client.php(187): GuzzleHttp\Client->requestAsync('GET', Object(GuzzleHttp\Psr7\Uri), Array)
+#13 D:\memory\micro.php.core\cmd\cli.php(28): GuzzleHttp\Client->request('GET', 'https://music.l...', Array)
+#14 {main}
+  thrown in D:\memory\micro.php.core\vendor\guzzlehttp\guzzle\src\Handler\CurlFactory.php on line 210
+[10-May-2023 10:42:32 UTC] PHP Warning:  file_get_contents(): SSL operation failed with code 1. OpenSSL Error messages:
+error:1416F086:SSL routines:tls_process_server_certificate:certificate verify failed in D:\memory\micro.php.core\cmd\cli.php on line 25
+[10-May-2023 10:42:32 UTC] PHP Stack trace:
+[10-May-2023 10:42:32 UTC] PHP   1. {main}() D:\memory\micro.php.core\cmd\cli.php:0
+[10-May-2023 10:42:32 UTC] PHP   2. file_get_contents($filename = 'https://music.liyutong180220.top/', $use_include_path = FALSE, $context = resource(20) of type (stream-context)) D:\memory\micro.php.core\cmd\cli.php:25
+[10-May-2023 10:42:32 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in D:\memory\micro.php.core\cmd\cli.php on line 25
+[10-May-2023 10:42:32 UTC] PHP Stack trace:
+[10-May-2023 10:42:32 UTC] PHP   1. {main}() D:\memory\micro.php.core\cmd\cli.php:0
+[10-May-2023 10:42:32 UTC] PHP   2. file_get_contents($filename = 'https://music.liyutong180220.top/', $use_include_path = FALSE, $context = resource(20) of type (stream-context)) D:\memory\micro.php.core\cmd\cli.php:25
+[10-May-2023 10:42:32 UTC] PHP Warning:  file_get_contents(https://music.liyutong180220.top/): Failed to open stream: operation failed in D:\memory\micro.php.core\cmd\cli.php on line 25
+[10-May-2023 10:42:32 UTC] PHP Stack trace:
+[10-May-2023 10:42:32 UTC] PHP   1. {main}() D:\memory\micro.php.core\cmd\cli.php:0
+[10-May-2023 10:42:32 UTC] PHP   2. file_get_contents($filename = 'https://music.liyutong180220.top/', $use_include_path = FALSE, $context = resource(20) of type (stream-context)) D:\memory\micro.php.core\cmd\cli.php:25
+[10-May-2023 10:43:00 UTC] PHP Warning:  file_get_contents(): Unable to set private key file `D:\memory\micro.php.core\cmd\fullchain.pem' in D:\memory\micro.php.core\cmd\cli.php on line 25
+[10-May-2023 10:43:00 UTC] PHP Stack trace:
+[10-May-2023 10:43:00 UTC] PHP   1. {main}() D:\memory\micro.php.core\cmd\cli.php:0
+[10-May-2023 10:43:00 UTC] PHP   2. file_get_contents($filename = 'https://music.liyutong180220.top/', $use_include_path = FALSE, $context = resource(20) of type (stream-context)) D:\memory\micro.php.core\cmd\cli.php:25
+[10-May-2023 10:43:00 UTC] PHP Warning:  file_get_contents(): Failed to enable crypto in D:\memory\micro.php.core\cmd\cli.php on line 25
+[10-May-2023 10:43:00 UTC] PHP Stack trace:
+[10-May-2023 10:43:00 UTC] PHP   1. {main}() D:\memory\micro.php.core\cmd\cli.php:0
+[10-May-2023 10:43:00 UTC] PHP   2. file_get_contents($filename = 'https://music.liyutong180220.top/', $use_include_path = FALSE, $context = resource(20) of type (stream-context)) D:\memory\micro.php.core\cmd\cli.php:25
+[10-May-2023 10:43:00 UTC] PHP Warning:  file_get_contents(https://music.liyutong180220.top/): Failed to open stream: operation failed in D:\memory\micro.php.core\cmd\cli.php on line 25
+[10-May-2023 10:43:00 UTC] PHP Stack trace:
+[10-May-2023 10:43:00 UTC] PHP   1. {main}() D:\memory\micro.php.core\cmd\cli.php:0
+[10-May-2023 10:43:00 UTC] PHP   2. file_get_contents($filename = 'https://music.liyutong180220.top/', $use_include_path = FALSE, $context = resource(20) of type (stream-context)) D:\memory\micro.php.core\cmd\cli.php:25
