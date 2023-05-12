@@ -1,0 +1,47 @@
+{
+  "user": {
+    "name": "John",
+    "age": 30,
+    "address": {
+      "street": "Main St",
+      "city": "San Francisco"
+    },
+    "devices": [
+      "laptop",
+      "phone",
+      "tablet"
+    ],
+    "friends": {
+      "name": [
+        "Tom",
+        "Jack",
+        "Amy"
+      ],
+      "close": [
+        "Tom",
+        "Jack"
+      ]
+    }
+  },
+  "company": {
+    "name": "Example Inc",
+    "departments": [
+      {
+        "name": "Marketing",
+        "team": [
+          "John",
+          "Tom"
+        ],
+        "lead": "Tom"
+      },
+      {
+        "name": "Engineering",
+        "team": [
+          "Jack",
+          "Amy"
+        ],
+        "lead": "Jack"
+      }
+    ]
+  }
+}
