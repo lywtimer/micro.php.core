@@ -36,6 +36,8 @@
         "symfony/http-foundation": "^6.2",
         "predis/predis": "^2.1",
         "google/protobuf": "^3.22",
-        "guzzlehttp/guzzle": "^7.5"
+        "guzzlehttp/guzzle": "^7.5",
+        "yosymfony/toml": "^1.0",
+        "symfony/yaml": "^6.2"
     }
 }

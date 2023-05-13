@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+    <user>
+        <name>John</name>
+        <age>30</age>
+        <address>
+            <street>Main St</street>
+            <city>San Francisco</city>
+        </address>
+        <devices>
+            <device>laptop</device>
+            <device>phone</device>
+            <device>tablet</device>
+        </devices>
+        <friends>
+            <name>Tom</name>
+            <name>Jack</name>
+            <name>Amy</name>
+            <close>
+                <friend>Tom</friend>
+                <friend>Jack</friend>
+            </close>
+        </friends>
+    </user>
+    <company>
+        <name>Example Inc</name>
+        <departments>
+            <department>
+                <name>Marketing</name>
+                <team>
+                    <member>John</member>
+                    <member>Tom</member>
+                </team>
+                <lead>Tom</lead>
+            </department>
+            <department>
+                <name>Engineering</name>
+                <team>
+                    <member>Jack</member>
+                    <member>Amy</member>
+                </team>
+                <lead>Jack</lead>
+            </department>
+        </departments>
+    </company>
+</root>
