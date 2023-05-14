@@ -27,9 +27,13 @@ try {
 //    echo $response->getStatusCode(), PHP_EOL;// 200
 //    echo $response->getBody(), PHP_EOL;
     //ini to array
-    $iniFile = $confPath . 'app.ini';
-//    $rs = parse_ini_file($iniFile, true);
-//    var_dump($rs);
+    $iniFile = $confPath . 'app1.ini';
+    $rs = parse_ini_file($iniFile, true);
+    if ($rs == false) {
+        var_dump(error_get_last());
+    }
+    var_dump($rs);
+    exit;
     //json to array
     $jsonFile = file_get_contents($confPath . 'app.json');
 //    $rs = json_decode($jsonFile, true);
